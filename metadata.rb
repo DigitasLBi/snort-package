@@ -1,6 +1,6 @@
 name             'snort_package'
-maintainer       'YOUR_COMPANY_NAME'
-maintainer_email 'YOUR_EMAIL'
+maintainer       'Goncalo Pereira'
+maintainer_email 'goncalo.pereira@digitaslbi.com'
 license          'All rights reserved'
 description      'Installs/Configures snort_package'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
