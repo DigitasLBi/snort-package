@@ -33,7 +33,10 @@ remote_file snort_path do
 	source "https://www.snort.org/downloads/snort/snort-#{node['snort_version']}.src.rpm"
 end
 
-execute "rpmbuild --rebuild #{snort_path}"
+execute "rpmbuild --rebuild #{snort_path}" do
+  user "#{node['current_user']}"
+  environment ({ "HOME" => "/home/#{node['current_user']}"})
+end
 
 yum_package "snort" do
  	source "/home/#{node['current_user']}/rpmbuild/RPMS/x86_64/snort-#{node['snort_version']}.x86_64.rpm"
